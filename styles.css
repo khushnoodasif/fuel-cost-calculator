@@ -1,0 +1,50 @@
+.container {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+body {
+  background-color: #0a192f;
+}
+
+h1 {
+  margin: 30px;
+  font-family: 'Amatic SC', cursive;
+  text-shadow: 5px 0 #182a46;
+  font-size: 2rem;
+  color: #64ffda;
+}
+
+.row {
+  font-size: 1rem;
+  color: #64ffda;
+  text-align: left;
+  font-family: 'Amatic SC';
+}
+
+.row-heading {
+  font-size: 1.5rem;
+  color: #64ffda;
+  font-family: 'Amatic SC';
+}
+
+.row-total {
+  font-size: 1.5rem;
+  color: #64ffda;
+  font-family: 'Amatic SC';
+}
+
+p {
+  font-size: 1rem;
+  color: #64ffda;
+  text-align: center;
+  font-family: 'Amatic SC';
+}
+
+footer {
+  margin-top: 15%;
+  color: #EEEEEE;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+}

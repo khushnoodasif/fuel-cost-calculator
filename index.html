@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fuel Cost Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>
+          Journey Cost Calculator
+      </h1>
+
+      <div class="row">
+        <p>
+          Total Miles: <input type="number" value="0" class="amount" id="miles" onchange="calculateTotal()"> 
+        </p>
+      </div>
+
+       <div class="row">
+        <p>
+          Fuel Comsumption (MPG): <input type="number" value="0" step="0.1" class="amount" id="mpg" onchange="calculateTotal()">
+        </p>
+      </div>
+      
+      <div class="row">
+        <p>
+          Price Per Litre (pence): <input type="number" class="amount" value="0" step="0.1" id="fuel-price" onchange="calculateTotal()">
+        </p>
+      </div>
+      
+      <div class="row-total">
+        <h2 id="total_cost_fuel"></h2>
+    </div>
+
+<script src="./index.js"></script>
+  </body>
+  <footer>
+    By Khushnood Asif
+  </footer>
+</html>
