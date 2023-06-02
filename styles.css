@@ -1,7 +1,10 @@
 .container {
-  width: auto;
-  margin: auto;
-  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 body {
@@ -12,33 +15,66 @@ h1 {
   margin: 30px;
   font-family: 'Amatic SC', cursive;
   text-shadow: 5px 0 #182a46;
-  font-size: 8rem;
+  font-size: 3rem;
   color: #64ffda;
 }
 
 .row {
-  font-size: 4rem;
+  font-size: 2rem;
   color: #64ffda;
   text-align: left;
   font-family: 'Amatic SC';
+  margin-bottom: 20px;
 }
 
 .row-heading {
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   color: #64ffda;
   font-family: 'Amatic SC';
 }
 
 .row-total {
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   color: #64ffda;
   font-family: 'Amatic SC';
 }
 
 p {
-  font-size: 4rem;
+  font-size: 2rem;
   color: #64ffda;
   text-align: center;
+  font-family: 'Amatic SC';
+}
+
+input.amount {
+  padding: 10px;
+  font-size: 1.5rem;
+  border: 1px solid #64ffda;
+  border-radius: 20px;
+  background-color: #3f3f3f;
+  color: #64ffda;
+  margin-left: 10px;
+}
+
+select {
+  padding: 10px;
+  font-size: 1.5rem;
+  border: 1px solid #64ffda;
+  border-radius: 20px;
+  background-color: #3f3f3f;
+  color: #64ffda;
+  margin-left: 10px;
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+#total_cost_fuel {
+  margin-top: 20px;
+  font-size: 2.5rem;
+  color: #64ffda;
   font-family: 'Amatic SC';
 }
 
@@ -46,6 +82,10 @@ footer {
   margin-top: 10%;
   color: #EEEEEE;
   text-align: center;
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   font-family: 'Amatic SC', cursive;
+}
+
+.hidden {
+  display: none;
 }
