@@ -5,28 +5,28 @@ function calculateTotal() {
 	var total_cost = 0;
 
 	if (calculation_method === "total") {
-		total_miles = parseFloat(document.getElementById("miles").value);
-		var total_miles_per_gallon = parseFloat(document.getElementById("mpg").value);
-		var fuel_price = parseFloat(document.getElementById("fuel-price").value);
-		var number_of_people = parseFloat(document.getElementById("people").value);
+		total_miles = Number(document.getElementById("miles").value);
+		var total_miles_per_gallon = Number(document.getElementById("mpg").value);
+		var fuel_price = Number(document.getElementById("fuel-price").value);
+		var number_of_people = Number(document.getElementById("people").value);
 
 		total_cost = ((fuel_price * gallons_to_liters) * (total_miles / total_miles_per_gallon) / 100) / number_of_people;
 	} else if (calculation_method === "start-end") {
-		start_miles = parseFloat(document.getElementById("start-miles").value);
-		end_miles = parseFloat(document.getElementById("end-miles").value);
-		var total_miles_per_gallon = parseFloat(document.getElementById("mpg").value);
-		var fuel_price = parseFloat(document.getElementById("fuel-price").value);
-		var number_of_people = parseFloat(document.getElementById("people").value);
+		start_miles = Number(document.getElementById("start-miles").value);
+		end_miles = Number(document.getElementById("end-miles").value);
+		var total_miles_per_gallon = Number(document.getElementById("mpg").value);
+		var fuel_price = Number(document.getElementById("fuel-price").value);
+		var number_of_people = Number(document.getElementById("people").value);
 
 		total_miles = end_miles - start_miles;
 		total_cost = ((fuel_price * gallons_to_liters) * (total_miles / total_miles_per_gallon) / 100) / number_of_people;
 	} else if (calculation_method === "mpg") {
-		start_miles = parseFloat(document.getElementById("start-miles").value);
-		end_miles = parseFloat(document.getElementById("end-miles").value);
-		var total_fuel_cost = parseFloat(document.getElementById("total_cost_fuel").value);
-		var fuel_consumption = parseFloat(document.getElementById("fuel_consumption").value);
-		var fuel_price = parseFloat(document.getElementById("fuel-price").value);
-		var number_of_people = parseFloat(document.getElementById("people").value);
+		start_miles = Number(document.getElementById("start-miles").value);
+		end_miles = Number(document.getElementById("end-miles").value);
+		var total_fuel_cost = Number(document.getElementById("total_cost_fuel").value);
+		var fuel_consumption = Number(document.getElementById("fuel_consumption").value);
+		var fuel_price = Number(document.getElementById("fuel-price").value);
+		var number_of_people = Number(document.getElementById("people").value);
 
 		total_miles = end_miles - start_miles;
 		var total_fuel_used = total_fuel_cost / (fuel_price * gallons_to_liters);
@@ -35,9 +35,9 @@ function calculateTotal() {
 	}
 
 	total_cost = total_cost.toFixed(2);
-	document.getElementById("total_cost").innerHTML = "Total Cost per Person: £" + total_cost;
+	document.getElementById("total_cost").textContent = "Total Cost per Person: £" + total_cost;
 }
- 
+
 function toggleCalculationMethod() {
 	var calculation_method = document.getElementById("calculation-method").value;
 	var totalMilesRow = document.getElementById("total-miles-row");
@@ -49,38 +49,35 @@ function toggleCalculationMethod() {
 	var totalMPG = document.getElementById("total_mpg")
 
 	if (calculation_method === "total") {
-		totalMilesRow.classList.remove("hidden");
-		startEndMilesRow.classList.add("hidden");
-		mpgRow.classList.add("hidden");
+		totalMilesRow.style.display = "block";
+		startEndMilesRow.style.display = "none";
+		mpgRow.style.display = "none";
 	} else if (calculation_method === "start-end") {
-		totalMilesRow.classList.add("hidden");
-		startEndMilesRow.classList.remove("hidden");
-		mpgRow.classList.add("hidden");
+		totalMilesRow.style.display = "none";
+		startEndMilesRow.style.display = "block";
+		mpgRow.style.display = "none";
 	} else if (calculation_method === "mpg") {
-    totalMilesRow.classList.add("hidden");
-    startEndMilesRow.classList.remove("hidden");
-    totalCostFuel.classList.remove("hidden");
-    mpgRow.classList.add("hidden");
-    pricePerson.classList.add("hidden");
-    totalCost.style.display = "none";
+		totalMilesRow.style.display = "none";
+		startEndMilesRow.style.display = "block";
+		totalCostFuel.style.display = "block";
+		mpgRow.style.display = "none";
+		pricePerson.style.display = "none";
+		totalCost.style.display = "none";
 	}
 
 	calculateTotal();
 }
 
 function calculateMPG() {
-  var start_miles = parseFloat(document.getElementById("start-miles").value);
-  var end_miles = parseFloat(document.getElementById("end-miles").value);
-  var total_fuel_cost = parseFloat(document.getElementById("total_cost_fuel").value);
-  var fuel_price = parseFloat(document.getElementById("fuel-price").value);
+	var start_miles = Number(document.getElementById("start-miles").value);
+	var end_miles = Number(document.getElementById("end-miles").value);
+	var total_fuel_cost = Number(document.getElementById("total_cost_fuel").value);
+	var fuel_price = Number(document.getElementById("fuel-price").value);
 
-  var total_miles = end_miles - start_miles;
-  var total_fuel_liters = total_fuel_cost / (fuel_price * 0.264172); // Conversion from pence to gallons
-  var miles_per_gallon = total_miles / total_fuel_liters;
+	var total_miles = end_miles - start_miles;
+	var total_fuel_liters = total_fuel_cost / (fuel_price * 0.264172); // Conversion from pence to gallons
+	var miles_per_gallon = total_miles / total_fuel_liters;
 
-  miles_per_gallon = miles_per_gallon.toFixed(1);
-	document.getElementById("total_mpg").innerHTML = "MPG: " + miles_per_gallon;
+	miles_per_gallon = miles_per_gallon.toFixed(1);
+	document.getElementById("total_mpg").textContent = "MPG: " + miles_per_gallon;
 }
-
-
- 
