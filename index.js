@@ -51,11 +51,11 @@ function toggleCalculationMethod() {
 	if (calculation_method === "total") {
 		totalMilesRow.style.display = "block";
 		startEndMilesRow.style.display = "none";
-		mpgRow.style.display = "none";
+		totalMPG.style.display = "none";
 	} else if (calculation_method === "start-end") {
 		totalMilesRow.style.display = "none";
 		startEndMilesRow.style.display = "block";
-		mpgRow.style.display = "none";
+		totalMPG.style.display = "none";
 	} else if (calculation_method === "mpg") {
 		totalMilesRow.style.display = "none";
 		startEndMilesRow.style.display = "block";

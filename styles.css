@@ -1,9 +1,18 @@
 .container {
   width: 90%; /* Adjust width for mobile */
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -64,6 +73,8 @@ select {
   background-color: #3f3f3f;
   color: #64ffda;
   margin-left: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -124,3 +135,4 @@ footer {
     font-size: 1.8rem;
   }
 }
+
